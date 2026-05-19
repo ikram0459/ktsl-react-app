@@ -5,10 +5,10 @@ import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
 
 const team = [
-  { name: "Ikram Niazi", role: "Founder & CEO", initials: "IN" },
-  { name: "Ifraz Khan", role: "Co-Founder & CTO", initials: "IK" },
-  { name: "Sikander Hayat", role: "Lead Engineer", initials: "SH" },
-  { name: "Farah Khan", role: "Product Manager", initials: "FK" },
+  { name: "Ikram Niazi", role: "Founder & Director", initials: "IN", url: "https://linktr.ee/ikram0459" },
+  { name: "Ifraz Khan", role: "AI Expert", initials: "IK", url: "https://linktr.ee/ifrazkhan" },
+  { name: "Sikander Hayat", role: "SAP Engineer", initials: "SH", url: "https://linktr.ee/sikanderhayat" },
+  { name: "Dr. Farah", role: "User Experience Designer", initials: "FK", url: "https://linktr.ee/farahkhan" },
 ];
 
 const productHighlights = [
@@ -194,7 +194,20 @@ export default function About() {
                   {/* Ghost line connector */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-px h-6 bg-gradient-to-b from-primary/40 to-transparent ghost-line" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-1">
+                  {member.url ? (
+                    <a
+                      href={member.url} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      {member.name}
+                    </a>
+                  ) : (
+                    member.name
+                  )}
+                </h3>
                 <p className="text-muted-foreground text-sm">{member.role}</p>
               </motion.div>
             ))}

@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Products", path: "/products" },
-  { label: "Services", path: "/services" },
+  { label: "Services", path: "/services" }, 
+  { label: "Training & Resources", path: "/training-resources" },
+  { label: "Portfolio", path: "/portfolio" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
@@ -20,11 +22,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm font-mono">KT</span>
-            </div>
-            <span className="text-foreground font-bold text-lg tracking-tight">Khan Tech</span>
+          <Link to="/" className="flex items-center">
+            <img src="../../src/media/khantech1.jpg" alt="Khan Tech" style={{ width: '230px', height: '60px' }} className="rounded-lg object-cover" />
           </Link>
 
           {/* Desktop Nav */}

@@ -1,16 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight, Users, BookOpen, BarChart3, FileText, Globe, MessageSquare } from "lucide-react";
+import { ExternalLink, ArrowRight, Users, BookOpen, BarChart3, FileText, Globe, MessageSquare, Github } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
 
-const products = [
+const portfolioItems = [
+  {
+    title: "BookWise Accountants",
+    tagline: "Modern Accountancy Experience",
+    description: "A react based modern looking accountancy website listing services, financial calculators and AI based assistance.",
+    image: "../../src/media/bookwise1.jpg",
+    demoUrl: "https://www.bookwiseaccountants.ie",
+    features: [
+      { icon: Globe, label: "Responsive Design" },
+      { icon: Users, label: "AI Assistance" },
+      { icon: FileText, label: "Financial Calculators" },
+    ],
+    tech: ["React", "DeepSeek", "Tailwind CSS"],
+    gradient: "from-primary/20 to-primary/5",
+  },
   {
     title: "Xenon Study",
     tagline: "Illuminate Your Learning Path",
     description: "Xenon Study is a next-generation digital learning platform designed to transform how students and professionals acquire knowledge. With interactive study tools, AI-powered content recommendations, and collaborative learning spaces, it provides a comprehensive educational ecosystem.",
     image: "../../src/media/xenon1.jpg",
     url: "https://xenonstudy.com",
+    demoUrl: "https://xenonstudy.com",
     features: [
       { icon: Globe, label: "Interactive Learning Modules" },
       { icon: Users, label: "Collaborative Study Spaces" },
@@ -37,7 +52,7 @@ const products = [
     title: "BizManager",
     tagline: "Your Business, Fully Managed",
     description: "BizManager is a complete business management solution that streamlines your operations from end to end. Manage customers, vendors, jobs, invoices, reports, and ledger — all from a single, powerful dashboard. Built for businesses that need clarity, control, and efficiency in every transaction.",
-    image: "../../src/media/bizmanager1.png",
+    image: "../../src/media/bizmanager2.png",
     url: null,
     features: [
       { icon: FileText, label: "Invoice & Ledger Management" },
@@ -63,32 +78,32 @@ const products = [
   },
 ];
 
-export default function Products() {
+export default function Portfolio() {
   return (
     <div>
       {/* Hero */}
       <div className="absolute inset-0">
           <img
-            src="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+            src="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/c9ca564e5_generated_f9f3af8e.png"
             alt="Technology services"
-            className="w-full h-full object-cover opacity-10"
-          />          
+            className="w-full h-full object-cover opacity-20"
+          />
       </div>
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
-            label="Our Products"
-            title="The Product Trilogy"
-            description="Four powerful platforms engineered to transform education, linguistics, enterprise management & cricket."
+            label="My Portfolio"
+            title="Featured Apps"
+            description="A showcase of my recent work, demonstrating expertise in full-stack development, UI/UX design, and innovative solutions."
           />
         </div>
       </section>
 
       <GhostLine />
 
-      {/* Products */}
-      {products.map((product, i) => (
-        <React.Fragment key={product.title}>
+      {/* Portfolio Items */}
+      {portfolioItems.map((item, i) => (
+        <React.Fragment key={item.title}>
           <section className="py-20 lg:py-28">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
@@ -100,10 +115,10 @@ export default function Products() {
                   transition={{ duration: 0.7 }}
                   className={i % 2 === 1 ? "lg:order-2" : ""}
                 >
-                  <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${product.gradient}`}>
+                  <div className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${item.gradient}`}>
                     <img
-                      src={product.image}
-                      alt={product.title}
+                      src={item.image}
+                      alt={item.title}
                       className="w-full aspect-video object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
@@ -119,19 +134,19 @@ export default function Products() {
                   className={i % 2 === 1 ? "lg:order-1" : ""}
                 >
                   <span className="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-3 block">
-                    Product {String(i + 1).padStart(2, "0")}
+                    Project {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-2">
-                    {product.title}
+                    {item.title}
                   </h3>
-                  <p className="text-accent text-sm font-medium mb-4">{product.tagline}</p>
+                  <p className="text-accent text-sm font-medium mb-4">{item.tagline}</p>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    {product.description}
+                    {item.description}
                   </p>
 
                   {/* Features */}
                   <div className="space-y-3 mb-8">
-                    {product.features.map((feature) => (
+                    {item.features.map((feature) => (
                       <div key={feature.label} className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                           <feature.icon className="w-4 h-4 text-primary" />
@@ -143,28 +158,31 @@ export default function Products() {
 
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-8">
-                    {product.tech.map((t) => (
+                    {item.tech.map((t) => (
                       <span key={t} className="text-xs font-mono text-muted-foreground bg-muted px-3 py-1 rounded-full border border-border/50">
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  {product.url && (
-                    <a
-                      href={product.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
-                    >
-                      Visit Website <ExternalLink className="w-4 h-4" />
-                    </a>
-                  )}
+                  {/* Links */}
+                  <div className="flex gap-4">
+                    {item.demoUrl && (
+                      <a
+                        href={item.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
+                      >
+                        View App <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </motion.div>
               </div>
             </div>
           </section>
-          {i < products.length - 1 && <GhostLine />}
+          {i < portfolioItems.length - 1 && <GhostLine />}
         </React.Fragment>
       ))}
     </div>

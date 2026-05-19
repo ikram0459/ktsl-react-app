@@ -13,11 +13,16 @@ const technologies = [
   { name: "Node.js", category: "Backend" },
   { name: "React", category: "Frontend" },
   { name: "Angular", category: "Frontend" },
-  { name: "HTML/CSS", category: "Frontend" },
+  { name: "HTML5/CSS3", category: "Frontend" },
   { name: "SQL Server", category: "Database" },
   { name: "PostgreSQL", category: "Database" },
-  { name: "MongoDB", category: "Database" },
+  { name: "CouchDB", category: "NoSQL" },
   { name: "MySQL", category: "Database" },
+  { name: "DeepSeek", category: "AI" },
+  { name: "Gemini", category: "AI" },
+  { name: "SAP Fiori", category: "SAP" },
+  { name: "SAP ABAP", category: "SAP" },
+  { name: "SAP Hana", category: "SAP" },
 ];
 
 const services = [
@@ -31,7 +36,7 @@ const services = [
     icon: Globe,
     title: "Static Website Development",
     description: "High-performance, SEO-optimized static websites that load instantly. Perfect for landing pages, portfolios, and business websites.",
-    techs: ["React", "HTML/CSS", "Angular"],
+    techs: ["React", "HTML/CSS", "Angular", "EzPublish", "WordPress"],
   },
   {
     icon: Smartphone,
@@ -43,7 +48,7 @@ const services = [
     icon: Database,
     title: "Database Architecture",
     description: "Scalable database design and optimization using the latest relational and NoSQL databases for maximum performance.",
-    techs: ["SQL Server", "PostgreSQL", "MongoDB", "MySQL"],
+    techs: ["SQL Server", "PostgreSQL", "CouchDB", "MySQL"],
   },
 ];
 

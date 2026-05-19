@@ -11,8 +11,8 @@ import { toast } from "sonner";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "contact@khantech.com" },
-  { icon: Phone, label: "Phone", value: "+92 300 0000000" },
-  { icon: MapPin, label: "Location", value: "Pakistan" },
+  { icon: Phone, label: "Phone", value: "+353892444612" },
+  { icon: MapPin, label: "Location", value: "Dublin, Ireland" },
 ];
 
 export default function Contact() {
@@ -32,6 +32,13 @@ export default function Contact() {
   return (
     <div>
       {/* Hero */}
+      <div className="absolute inset-0">
+          <img
+            src="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+            alt="Technology services"
+            className="w-full h-full object-cover opacity-10"
+          />
+      </div>
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
@@ -86,79 +93,9 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-3"
             >
-              <form
-                onSubmit={handleSubmit}
-                className="bg-card border border-border/50 rounded-2xl p-8 lg:p-10 space-y-6"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm text-muted-foreground">Full Name</Label>
-                    <Input
-                      id="name"
-                      placeholder="Your name"
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      required
-                      className="bg-muted border-border/50"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm text-muted-foreground">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      required
-                      className="bg-muted border-border/50"
-                    />
-                  </div>
-                </div>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenvsfGoXdYlA4OlSAw5QLYGe5x4vdlDEVp0evDFNvV0OUXkg/viewform" 
+width="100%" height="1130" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-                <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-sm text-muted-foreground">Subject</Label>
-                  <Input
-                    id="subject"
-                    placeholder="Project inquiry"
-                    value={form.subject}
-                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    required
-                    className="bg-muted border-border/50"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm text-muted-foreground">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your project..."
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    required
-                    rows={6}
-                    className="bg-muted border-border/50 resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={sending}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  {sending ? (
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                      Sending...
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-2">
-                      <Send className="w-4 h-4" />
-                      Send Message
-                    </div>
-                  )}
-                </Button>
-              </form>
             </motion.div>
           </div>
         </div>
