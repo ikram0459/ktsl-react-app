@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="/manifest.json" />
     <title>Khan Tech</title>
-    <script type="module" crossorigin src="/assets/index-CwCSKyzD.js"></script>
+    <script type="module" crossorigin src="/assets/index-BRqnzT59.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-gzhjaQkE.css">
     <script type="module">
 if (window.self === window.top) {
@@ -22,7 +22,7 @@ if (window.self === window.top) {
     const pageName = getPageNameFromPath(path) || "home";
     const appId = "69f355cbad1c8de4c179d0b2";
     if (!appId) return;
-    fetch(`/app-logs/${appId}/log-user-in-app/${pageName}`, {
+    fetch(`/api/app-logs/${appId}/log-user-in-app/${pageName}`, {
       method: "POST",
     }).catch(() => {});
   }
