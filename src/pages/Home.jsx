@@ -93,12 +93,18 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/products"
+                data-ga-event="explore_products"
+                data-ga-category="navigation"
+                data-ga-label="Explore Products Button"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
               >
                 Explore Products <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/contact"
+                data-ga-event="contact_navigation"
+                data-ga-category="navigation"
+                data-ga-label="Get In Touch Button"
                 className="inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-muted transition-all"
               >
                 Get In Touch

@@ -84,6 +84,9 @@ export default function TrainingResources() {
         <div className="mt-6">
           <Link
             to="/contact"
+            data-ga-event="contact_navigation"
+            data-ga-category="navigation"
+            data-ga-label="Training Resources Contact Button"
             className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             Contact Us for Custom Training
@@ -139,6 +142,9 @@ export default function TrainingResources() {
                     <button
                       type="button"
                       onClick={() => setActiveVideo(video)}
+                      data-ga-event="play_video"
+                      data-ga-category="training"
+                      data-ga-label={video.title}
                       className="inline-flex items-center justify-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-full transition"
                     >
                       Play Video
@@ -147,6 +153,9 @@ export default function TrainingResources() {
                       href={video.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-ga-event="open_youtube"
+                      data-ga-category="training"
+                      data-ga-label={video.title}
                       className="inline-flex items-center justify-center px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-100 text-sm font-medium rounded-full transition"
                     >
                       Open on YouTube

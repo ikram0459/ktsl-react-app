@@ -163,6 +163,9 @@ export default function Products() {
                       href={product.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-ga-event="visit_product_site"
+                      data-ga-category="product"
+                      data-ga-label={product.title}
                       className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
                     >
                       Visit Website <ExternalLink className="w-4 h-4" />

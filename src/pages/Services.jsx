@@ -187,6 +187,9 @@ export default function Services() {
             </p>
             <Link
               to="/contact"
+              data-ga-event="contact_navigation"
+              data-ga-category="button"
+              data-ga-label="Services Contact Button"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
             >
               Start a Conversation <ArrowRight className="w-4 h-4" />

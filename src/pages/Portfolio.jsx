@@ -183,6 +183,9 @@ export default function Portfolio() {
                         href={item.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        data-ga-event="view_app"
+                        data-ga-category="portfolio"
+                        data-ga-label={item.title}
                         className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
                       >
                         View App <ExternalLink className="w-4 h-4" />
@@ -197,6 +200,9 @@ export default function Portfolio() {
                             element?.scrollIntoView({ behavior: "smooth", block: "start" });
                           }, 100);
                         }}
+                        data-ga-event="request_demo"
+                        data-ga-category="portfolio"
+                        data-ga-label={item.title}
                         className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
                       >
                         Request demo / more info <ArrowRight className="w-4 h-4" />

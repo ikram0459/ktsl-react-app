@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { initializeAnalytics, trackPageView } from "@/lib/analytics";
 
 const STORAGE_KEY = "khanTechCookieConsent";
 
@@ -11,7 +12,10 @@ export default function CookieConsent() {
     if (typeof window === "undefined") return;
 
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "accepted" || stored === "rejected") {
+    if (stored === "accepted") {
+      setConsent(stored);
+      initializeAnalytics();
+    } else if (stored === "rejected") {
       setConsent(stored);
     }
   }, []);
@@ -21,8 +25,12 @@ export default function CookieConsent() {
 
     window.localStorage.setItem(STORAGE_KEY, value);
 
-    if (value === "accepted" && window.dataLayer) {
-      window.dataLayer.push({ event: "cookie_consent_accepted" });
+    if (value === "accepted") {
+      initializeAnalytics();
+      if (window.gtag) {
+        window.gtag("event", "cookie_consent_accepted", { event_category: "consent" });
+        trackPageView(window.location.pathname + window.location.search + window.location.hash);
+      }
     }
     if (value === "rejected" && window.dataLayer) {
       window.dataLayer.push({ event: "cookie_consent_rejected" });
