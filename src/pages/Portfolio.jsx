@@ -1,15 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight, Users, BookOpen, BarChart3, FileText, Globe, MessageSquare, Github } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 
 const portfolioItems = [
   {
     title: "BookWise Accountants",
     tagline: "Modern Accountancy Experience",
     description: "A react based modern looking accountancy website listing services, financial calculators and AI based assistance.",
-    image: "../../src/media/bookwise1.jpg",
+    image: new URL("../media/bookwise1.jpg", import.meta.url).href,
     demoUrl: "https://www.bookwiseaccountants.ie",
     features: [
       { icon: Globe, label: "Responsive Design" },
@@ -23,7 +25,7 @@ const portfolioItems = [
     title: "Xenon Study",
     tagline: "Illuminate Your Learning Path",
     description: "Xenon Study is a next-generation digital learning platform designed to transform how students and professionals acquire knowledge. With interactive study tools, AI-powered content recommendations, and collaborative learning spaces, it provides a comprehensive educational ecosystem.",
-    image: "../../src/media/xenon1.jpg",
+    image: new URL("../media/xenon1.jpg", import.meta.url).href,
     url: "https://xenonstudy.com",
     demoUrl: "https://xenonstudy.com",
     features: [
@@ -38,7 +40,7 @@ const portfolioItems = [
     title: "The Book App",
     tagline: "Classical Wisdom, Modern Interface",
     description: "The Book (Al-Kitab) App is a revolutionary platform for Al-Kitab (Quran) & Other Arabic book translation by renowned scholars. It offers word-by-word translation with detailed linguistic breakdowns, enabling students and enthusiasts to deeply understand classical Arabic texts. With built-in social features, users can discuss, share insights, and learn collaboratively.",
-    image: "../../src/media/thebook1.png",
+    image: new URL("../media/thebook1.png", import.meta.url).href,
     url: null,
     features: [
       { icon: BookOpen, label: "AI Search & Word-by-Word Translation" },
@@ -52,7 +54,7 @@ const portfolioItems = [
     title: "BizManager",
     tagline: "Your Business, Fully Managed",
     description: "BizManager is a complete business management solution that streamlines your operations from end to end. Manage customers, vendors, jobs, invoices, reports, and ledger — all from a single, powerful dashboard. Built for businesses that need clarity, control, and efficiency in every transaction.",
-    image: "../../src/media/bizmanager2.png",
+    image: new URL("../media/bizmanager2.png", import.meta.url).href,
     url: null,
     features: [
       { icon: FileText, label: "Invoice & Ledger Management" },
@@ -66,7 +68,7 @@ const portfolioItems = [
     title: "CricketScorer",
     tagline: "Your Live Match, Fully Managed",
     description: "CricketScorer is a complete cricket scoring scolution that provides stats, analytics and live streaming along with scoring to viewers. All from a single, powerful dashboard. Built for cricket enthusiasts. Forget about scoring in mind or paper, go Digital.",
-    image: "../../src/media/cricketscorer1.png",
+    image: new URL("../media/cricketscorer1.png", import.meta.url).href,
     url: null,
     features: [
       { icon: FileText, label: "Live Cricket Scoring" },
@@ -79,8 +81,17 @@ const portfolioItems = [
 ];
 
 export default function Portfolio() {
+  const navigate = useNavigate();
+
   return (
     <div>
+      <SEO
+        title="Portfolio | Khan Tech"
+        description="View Khan Tech Services portfolio showcasing modern accountancy websites, digital learning platforms, business management solutions, and live cricket scoring apps."
+        keywords="portfolio, case studies, web applications, digital products, Khan Tech"
+        url="https://www.khantechservices.online/#/portfolio"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/c9ca564e5_generated_f9f3af8e.png"
+      />
       {/* Hero */}
       <div className="absolute inset-0">
           <img
@@ -176,6 +187,20 @@ export default function Portfolio() {
                       >
                         View App <ExternalLink className="w-4 h-4" />
                       </a>
+                    )}
+                    {!item.demoUrl && (
+                      <button
+                        onClick={() => {
+                          navigate("/contact");
+                          setTimeout(() => {
+                            const element = document.getElementById("lets-start-conversation");
+                            element?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }, 100);
+                        }}
+                        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
+                      >
+                        Request demo / more info <ArrowRight className="w-4 h-4" />
+                      </button>
                     )}
                   </div>
                 </motion.div>

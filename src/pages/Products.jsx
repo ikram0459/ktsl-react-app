@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight, Users, BookOpen, BarChart3, FileText, Globe, MessageSquare } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 
 const products = [
   {
     title: "Xenon Study",
     tagline: "Illuminate Your Learning Path",
     description: "Xenon Study is a next-generation digital learning platform designed to transform how students and professionals acquire knowledge. With interactive study tools, AI-powered content recommendations, and collaborative learning spaces, it provides a comprehensive educational ecosystem.",
-    image: "../../src/media/xenon1.jpg",
+    image: new URL("../media/xenon1.jpg", import.meta.url).href,
     url: "https://xenonstudy.com",
     features: [
       { icon: Globe, label: "Interactive Learning Modules" },
@@ -23,7 +24,7 @@ const products = [
     title: "The Book App",
     tagline: "Classical Wisdom, Modern Interface",
     description: "The Book (Al-Kitab) App is a revolutionary platform for Al-Kitab (Quran) & Other Arabic book translation by renowned scholars. It offers word-by-word translation with detailed linguistic breakdowns, enabling students and enthusiasts to deeply understand classical Arabic texts. With built-in social features, users can discuss, share insights, and learn collaboratively.",
-    image: "../../src/media/thebook1.png",
+    image: new URL("../media/thebook1.png", import.meta.url).href,
     url: null,
     features: [
       { icon: BookOpen, label: "AI Search & Word-by-Word Translation" },
@@ -37,7 +38,7 @@ const products = [
     title: "BizManager",
     tagline: "Your Business, Fully Managed",
     description: "BizManager is a complete business management solution that streamlines your operations from end to end. Manage customers, vendors, jobs, invoices, reports, and ledger — all from a single, powerful dashboard. Built for businesses that need clarity, control, and efficiency in every transaction.",
-    image: "../../src/media/bizmanager1.png",
+    image: new URL("../media/bizmanager1.png", import.meta.url).href,
     url: null,
     features: [
       { icon: FileText, label: "Invoice & Ledger Management" },
@@ -51,7 +52,7 @@ const products = [
     title: "CricketScorer",
     tagline: "Your Live Match, Fully Managed",
     description: "CricketScorer is a complete cricket scoring scolution that provides stats, analytics and live streaming along with scoring to viewers. All from a single, powerful dashboard. Built for cricket enthusiasts. Forget about scoring in mind or paper, go Digital.",
-    image: "../../src/media/cricketscorer1.png",
+    image: new URL("../media/cricketscorer1.png", import.meta.url).href,
     url: null,
     features: [
       { icon: FileText, label: "Live Cricket Scoring" },
@@ -66,6 +67,13 @@ const products = [
 export default function Products() {
   return (
     <div>
+      <SEO
+        title="Products | Khan Tech"
+        description="Explore Khan Tech Services products including Xenon Study, The Book App, BizManager, and CricketScorer — modern platforms for education, Arabic learning, and business automation."
+        keywords="Xenon Study, The Book App, BizManager, CricketScorer, Khan Tech products, software products"
+        url="https://www.khantechservices.online/#/products"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+      />
       {/* Hero */}
       <div className="absolute inset-0">
           <img

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, BookOpen, Briefcase } from "lucide-react";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 
 const products = [
   {
@@ -42,6 +43,13 @@ const stats = [
 export default function Home() {
   return (
     <div>
+      <SEO
+        title="Khan Tech | Software, AI & Business Solutions"
+        description="Khan Tech Services delivers full-stack software, AI-powered business apps, and website development from Dublin. Build products, automate workflows, and grow with expert engineering."
+        keywords="Khan Tech, software development, AI solutions, web apps, business management, Dublin"
+        url="https://www.khantechservices.online/"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/07f372733_generated_fb72a2c3.png"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Image */}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoImage from "../../media/khantech1.jpg";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -23,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="../../src/media/khantech1.jpg" alt="Khan Tech" style={{ width: '230px', height: '60px' }} className="rounded-lg object-cover" />
+            <img src={logoImage} alt="Khan Tech" style={{ width: '230px', height: '60px' }} className="rounded-lg object-cover" />
           </Link>
 
           {/* Desktop Nav */}

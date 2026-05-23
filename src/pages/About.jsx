@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import { Target, Eye, Code2, BookOpen, Briefcase } from "lucide-react";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 
 const team = [
-  { name: "Ikram Niazi", role: "Founder & Director", initials: "IN", url: "https://linktr.ee/ikram0459" },
-  { name: "Ifraz Khan", role: "AI Expert", initials: "IK", url: "https://linktr.ee/ifrazkhan" },
-  { name: "Sikander Hayat", role: "SAP Engineer", initials: "SH", url: "https://linktr.ee/sikanderhayat" },
-  { name: "Dr. Farah", role: "User Experience Designer", initials: "FK", url: "https://linktr.ee/farahkhan" },
+  { name: "Ikram Niazi", role: "Founder & Director", initials: "IN", url: "https://www.linkedin.com/in/ikram0459" },
+  { name: "Ifraz Khan", role: "Media &AI Expert", initials: "IK", url: "https://www.instagram.com/ifraz0459" },
+  { name: "Sikander Hayat", role: "SAP Engineer", initials: "SH", url: "https://www.linkedin.com/in/sikander-hayat-khan-niazi" },
+  { name: "Dr. Farah", role: "Customer Service & User Experience", initials: "FK", url: "https://www.linkedin.com/in/dr-farah-khan-27355b203" },
 ];
 
 const productHighlights = [
@@ -32,6 +33,13 @@ const productHighlights = [
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About Us | Khan Tech"
+        description="Learn about Khan Tech Services — a Dublin-based software team building innovative apps, AI experiences, and business solutions with a customer-first focus."
+        keywords="about Khan Tech, team, mission, software company, AI services"
+        url="https://www.khantechservices.online/#/about"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+      />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -158,7 +166,6 @@ export default function About() {
       </section>
 
       <GhostLine />
-
       {/* Team */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -214,6 +221,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </div>
+    </div>    
   );
 }

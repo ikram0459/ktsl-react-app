@@ -4,6 +4,7 @@ import { Monitor, Smartphone, Globe, Database, Code2, ArrowRight } from "lucide-
 import { Link } from "react-router-dom";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 
 const technologies = [
   { name: ".NET Core", category: "Backend" },
@@ -20,6 +21,9 @@ const technologies = [
   { name: "MySQL", category: "Database" },
   { name: "DeepSeek", category: "AI" },
   { name: "Gemini", category: "AI" },
+  { name: "Claude", category: "AI" },
+  { name: "AgenticAI", category: "AI" },
+  { name: "AI-Agents", category: "AI" },
   { name: "SAP Fiori", category: "SAP" },
   { name: "SAP ABAP", category: "SAP" },
   { name: "SAP Hana", category: "SAP" },
@@ -55,6 +59,13 @@ const services = [
 export default function Services() {
   return (
     <div>
+      <SEO
+        title="Services | Khan Tech"
+        description="Khan Tech Services offers web app development, static websites, mobile apps, database architecture, and AI-enabled software for startups and enterprises."
+        keywords="software services, web development, mobile apps, database architecture, AI solutions, digital transformation"
+        url="https://www.khantechservices.online/#/services"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/c9ca564e5_generated_f9f3af8e.png"
+      />
       {/* Hero */}
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0">

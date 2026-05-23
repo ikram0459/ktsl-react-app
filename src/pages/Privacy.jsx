@@ -1,218 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight, Code2, BookOpen, Briefcase } from "lucide-react";
-import GhostLine from "../components/shared/GhostLine";
+﻿import SectionHeading from "../components/shared/SectionHeading";
+import SEO from "../components/SEO";
 
-const products = [
-  {
-    icon: Code2,
-    title: "Xenon Study",
-    description: "A comprehensive digital learning platform transforming education through interactive study tools and smart content delivery.",
-    link: "/products",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-  },
-  {
-    icon: BookOpen,
-    title: "The Book App",
-    description: "Word-by-word Arabic translation by scholars with social features, bringing classical knowledge to the modern world.",
-    link: "/products",
-    color: "text-accent",
-    bgColor: "bg-accent/10",
-  },
-  {
-    icon: Briefcase,
-    title: "BizManager",
-    description: "End-to-end business management — customers, vendors, jobs, invoices, reports and ledger — all in one powerful platform.",
-    link: "/products",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-  },
-];
-
-const stats = [
-  { value: "3+", label: "Products" },
-  { value: "10+", label: "Technologies" },
-  { value: "5+", label: "Team Members" },
-  { value: "100%", label: "Commitment" },
-];
-
-export default function Home() {
+export default function Privacy() {
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/07f372733_generated_fb72a2c3.png"
-            alt="Abstract crystalline neural network"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+    <div className="py-20 lg:py-28">
+      <SEO
+        title="Privacy Policy | Khan Tech"
+        description="Read Khan Tech Services privacy policy for website usage, data handling, and contact information."
+        keywords="privacy policy, data protection, Khan Tech, GDPR"
+        url="https://www.khantechservices.online/#/privacy"
+      />
+      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <SectionHeading label="Legal" title="Privacy Policy" description="How we collect, use and protect your personal data in Ireland." />
+        <div className="prose prose-invert prose-sm max-w-none space-y-6 text-muted-foreground leading-relaxed">
+          <p>Khan Tech Services Ltd ("we", "us" or "our") is committed to protecting the privacy of visitors to our website and users of our services. This Privacy Policy explains how we collect, use, disclose and safeguard your personal data in accordance with Irish and EU data protection law, including the General Data Protection Regulation (GDPR) and the Irish Data Protection Act 2018.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Company Information</h3>
+          <p>Khan Tech Services Ltd is registered in Ireland with company registration number 725731 and VAT number IE 4041065WH.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Personal Data We Collect</h3>
+          <p>We may collect personal data such as your name, contact details, company name, and any information you provide through the contact form or when requesting our services. We also collect technical and usage data when you visit our website, including IP address, browser type, device information, and pages viewed.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">How We Use Your Data</h3>
+          <p>We use your personal data to respond to enquiries, provide and improve our services, communicate with you, and comply with our legal obligations. We may also use your data for legitimate business interests such as analytics, security, and website maintenance.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Legal Basis for Processing</h3>
+          <p>We process personal data on the basis of your consent, the performance of a contract, our legitimate interests, or to comply with a legal obligation. Our legitimate interests include operating and improving our website, communicating with customers, and preventing fraud.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Cookies and Tracking</h3>
+          <p>We may use cookies and similar technologies to make the website work, personalise content, and analyse website traffic. Most browsers allow you to block or delete cookies, although this may affect the functionality of the site.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Sharing and Disclosure</h3>
+          <p>We do not sell your personal data. We may share information with service providers that support our business, with authorities when required by law, and with professional advisors when necessary to protect our rights.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Data Security</h3>
+          <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, disclosure, alteration, or destruction. However, no internet transmission is completely secure.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Data Retention</h3>
+          <p>We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, satisfy legal obligations, and resolve disputes.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Your Rights</h3>
+          <p>If you are located in Ireland or the EU, you have rights under GDPR, including the rights to access, correct, erase, restrict processing of, and object to processing of your personal data, as well as the right to data portability.</p>
+
+          <h3 className="text-foreground font-semibold text-lg">Contact</h3>
+          <p>If you have questions about this Privacy Policy or wish to exercise your rights, please contact us through our website contact form or by email using the details provided on our Contact page.</p>
+
+          <p>By using our website, you acknowledge that you have read and understood this Privacy Policy.</p>
         </div>
-
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: "linear-gradient(hsl(263 70% 66% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(263 70% 66% / 0.3) 1px, transparent 1px)",
-            backgroundSize: "60px 60px"
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block text-primary text-xs font-mono uppercase tracking-[0.3em] mb-6">
-              [ Khan Tech ]
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tight leading-[1.1] mb-6">
-              Engineering
-              <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                The Future
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-xl">
-              We build transformative software products and deliver world-class development services that push the boundaries of technology.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
-              >
-                Explore Products <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-medium text-sm hover:bg-muted transition-all"
-              >
-                Get In Touch
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <GhostLine />
-
-      {/* Stats Section */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 font-mono">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <GhostLine />
-
-      {/* Products Preview */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-4 block">
-              Our Products
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">
-              The Product Trilogy
-            </h2>
-            <div className="mt-6 mx-auto w-16 h-0.5 bg-gradient-to-r from-primary to-accent" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {products.map((product, i) => (
-              <motion.div
-                key={product.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-              >
-                <Link
-                  to={product.link}
-                  className="group block bg-card border border-border/50 rounded-xl p-8 hover:border-primary/30 transition-all duration-500 h-full"
-                >
-                  <div className={`w-12 h-12 rounded-xl ${product.bgColor} flex items-center justify-center mb-6`}>
-                    <product.icon className={`w-6 h-6 ${product.color}`} />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {product.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    {product.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium">
-                    Learn More <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <GhostLine />
-
-      {/* CTA Section */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative bg-card border border-border/50 rounded-2xl p-10 md:p-16 text-center overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: "radial-gradient(circle at 30% 50%, hsl(263 70% 66%) 0%, transparent 50%), radial-gradient(circle at 70% 50%, hsl(187 92% 41%) 0%, transparent 50%)"
-              }}
-            />
-            <div className="relative">
-              <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
-                Ready to Build Something Great?
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
-                Let's discuss your next project and bring your vision to life.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium text-sm hover:bg-primary/90 transition-all"
-              >
-                Contact Us <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

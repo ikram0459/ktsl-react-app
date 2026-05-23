@@ -7,11 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import SectionHeading from "../components/shared/SectionHeading";
 import GhostLine from "../components/shared/GhostLine";
+import SEO from "../components/SEO";
 import { toast } from "sonner";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "contact@khantech.com" },
-  { icon: Phone, label: "Phone", value: "+353892444612" },
+  { icon: Mail, label: "Email", value: "info@khantechservices.online" },
+  { icon: Phone, label: "Phone / WhatsApp", value: "+353892444612" },
   { icon: MapPin, label: "Location", value: "Dublin, Ireland" },
 ];
 
@@ -31,6 +32,13 @@ export default function Contact() {
 
   return (
     <div>
+      <SEO
+        title="Contact | Khan Tech"
+        description="Get in touch with Khan Tech Services to discuss custom software, AI products, and digital transformation for your business."
+        keywords="contact Khan Tech, software inquiry, request demo, business inquiry, digital services"
+        url="https://www.khantechservices.online/#/contact"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+      />
       {/* Hero */}
       <div className="absolute inset-0">
           <img
@@ -63,7 +71,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+              <h3 id="lets-start-conversation" className="text-2xl font-bold text-foreground mb-6">
                 Let's start a conversation
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-10">

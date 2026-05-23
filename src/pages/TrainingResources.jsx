@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from "../components/SEO";
 
 /** @typedef {{id:number,title:string,category:string,description:string,videoUrl:string}} VideoResource */
 
@@ -56,6 +57,13 @@ export default function TrainingResources() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <SEO
+        title="Training Resources | Khan Tech"
+        description="Access Khan Tech Services training resources, guides, and learning materials for software and business technology."
+        keywords="training resources, learning materials, software guides, Khan Tech, development tutorials"
+        url="https://www.khantechservices.online/#/training-resources"
+        image="https://media.base44.com/images/public/69f355cbad1c8de4c179d0b2/41e80803d_generated_f75401f5.png"
+      />
       {/* Hero / Header Section */}
       <div className="absolute inset-0">
           <img
@@ -74,12 +82,12 @@ export default function TrainingResources() {
           page.
         </p>
         <div className="mt-6">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             Contact Us for Custom Training
-          </a>
+          </Link>
         </div>
       </header>
 
